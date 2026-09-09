@@ -34,9 +34,9 @@ const Footer = () => {
   ];
 
   const contactInfo = [
-    { icon: <Phone className="w-4 h-4" />, text: '1800-258-1980', href: 'tel:18002581980' },
+    { icon: <Phone className="w-4 h-4" />, text: '9876543210', href: 'tel:9876543210' },
     { icon: <Mail className="w-4 h-4" />, text: 'info@SURYAENTERPRISES.com', href: 'mailto:info@SURYAENTERPRISES.com' },
-    { icon: <MapPin className="w-4 h-4" />, text: 'Rajkot, Gujarat', href: 'https://maps.google.com/?q=Rajkot' },
+    { icon: <MapPin className="w-4 h-4" />, text: 'Delhi, India', href: 'https://maps.google.com/?q=Delhi, Delhi' },
   ];
 
   const socialLinks = [

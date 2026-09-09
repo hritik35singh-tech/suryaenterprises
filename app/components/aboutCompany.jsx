@@ -11,7 +11,7 @@ const AboutContent = () => {
   return (
     <div className="bg-linear-to-b from-green-50 to-white">
       {/* Full Width Video Banner with Fade */}
-      <div className="relative w-full h-150 md:h-175 lg:h-200 overflow-hidden">
+      <div className="relative w-full h-[clamp(32rem,calc(100vh-4rem),48rem)] overflow-hidden">
         {/* Video Background */}
         <div className="absolute inset-0 w-full h-full">
           <iframe
@@ -28,39 +28,21 @@ const AboutContent = () => {
           ></iframe>
           
           {/* Premium Gradient Overlay */}
-          <div className="absolute inset-0 bg-linear-to-r from-green-900/90 via-green-800/50 to-emerald-900/70"></div>
-          
-          {/* Animated particles effect */}
-          <div className="absolute inset-0 opacity-30">
-            <div className="absolute top-20 left-10 w-2 h-2 bg-white rounded-full animate-ping"></div>
-            <div className="absolute top-40 right-20 w-3 h-3 bg-amber-300 rounded-full animate-pulse"></div>
-            <div className="absolute bottom-32 left-1/4 w-2 h-2 bg-green-300 rounded-full animate-ping"></div>
-          </div>
-          
-          {/* Multiple Fade Layers */}
-          <div className="absolute bottom-0 left-0 right-0 h-64 bg-linear-to-t from-white via-white/50 to-transparent"></div>
-          <div className="absolute bottom-0 left-0 right-0 h-96 bg-linear-to-t from-white via-white/30 to-transparent"></div>
+          <div className="absolute inset-0 bg-linear-to-r from-green-950/85 via-green-900/45 to-emerald-950/55"></div>
+          <div className="absolute inset-x-0 bottom-0 h-48 bg-linear-to-t from-white via-white/55 to-transparent"></div>
         </div>
 
         {/* Banner Text Overlay */}
         <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
-          <div className="text-white max-w-3xl mt-20 md:mt-0">
-            {/* Animated Badge */}
-            <div className="inline-flex items-center bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6 border border-white/30">
-              <Sprout className="w-4 h-4 mr-2 text-amber-300" />
-              <span className="text-sm font-medium">Est. 1995 • Gujarat, India</span>
-            </div>
+          <div className="text-white max-w-3xl pt-8 md:pt-0">
+
             
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 leading-tight">
-              PUSHP<span className="text-amber-300">RATAN</span>
+            <h1 className="text-[clamp(2.75rem,6vw,5.5rem)] font-bold mb-4 leading-[0.95] tracking-tight">
+              SURYA<span className="text-amber-300">ENTERPRISES</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-100 mb-4 max-w-2xl leading-relaxed">
               Greens Limited
             </p>
-            <div className="flex items-center gap-4">
-              <div className="w-20 h-1 bg-amber-400 rounded-full"></div>
-              <span className="text-amber-200 text-sm tracking-widest">SINCE 1995</span>
-            </div>
           </div>
         </div>
       </div>

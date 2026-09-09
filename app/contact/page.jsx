@@ -3,10 +3,10 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { 
+import {
   MapPin, Phone, Mail, Building, Users, Clock,
   Send, ChevronRight, Copy, CheckCircle, Globe,
-  MessageSquare, Navigation, Calendar, Award
+  MessageSquare, Navigation, Award
 } from 'lucide-react';
 
 const ContactContent = () => {
@@ -17,7 +17,7 @@ const ContactContent = () => {
     company: '',
     message: ''
   });
-  
+
   const [copied, setCopied] = useState(null);
   const [formStatus, setFormStatus] = useState(null);
 
@@ -38,9 +38,6 @@ const ContactContent = () => {
     setFormStatus('success');
     setTimeout(() => setFormStatus(null), 3000);
   };
-
-  // Google Maps embed URL for Rajkot location
-  const mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117943.16189932743!2d70.69415475!3d22.3038945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959c98ac71c15cf%3A0xf5c26662013dde8b!2sRajkot%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin";
 
   return (
     <div className="bg-linear-to-b from-green-50 to-white">
@@ -63,18 +60,18 @@ const ContactContent = () => {
               <MessageSquare className="w-4 h-4 mr-2 text-amber-300" />
               <span className="text-sm font-medium">Get in Touch</span>
             </div>
-            
+
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
               Reach Out to{' '}
               <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-300 to-yellow-400">
                 SURYAENTERPRISES
               </span>
             </h1>
-            
+
             <p className="text-xl md:text-2xl text-gray-100 mb-4 font-light max-w-2xl">
               Greens Limited
             </p>
-            
+
             <div className="w-24 h-1 bg-amber-400 rounded-full mt-8"></div>
           </div>
         </div>
@@ -84,25 +81,25 @@ const ContactContent = () => {
 
       {/* Main Content */}
       <div className="max-w-10xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        
+
         {/* Introduction */}
         <div className="text-center max-w-4xl mx-auto mb-16">
           <div className="inline-flex items-center justify-center p-2 bg-green-100 rounded-full mb-4">
             <Users className="w-6 h-6 text-green-700" />
           </div>
           <p className="text-xl text-gray-600 leading-relaxed">
-            We're here to assist you. Whether you have inquiries about our products, need technical support, 
-            or want to explore partnership opportunities, we're just a message away. Feel free to contact us 
+            We're here to assist you. Whether you have inquiries about our products, need technical support,
+            or want to explore partnership opportunities, we're just a message away. Feel free to contact us
             through any of the channels below.
           </p>
         </div>
 
         {/* Two Column Layout */}
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
-          
+
           {/* Left Column - Contact Info & Form */}
           <div className="space-y-8">
-            
+
             {/* Visit Our Headquarters Card */}
             <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
               <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
@@ -110,7 +107,7 @@ const ContactContent = () => {
                 Visit Our Headquarters
               </h2>
               <p className="text-gray-600 mb-6">
-                If you prefer face-to-face interactions, we welcome you to visit our headquarters. Experience 
+                If you prefer face-to-face interactions, we welcome you to visit our headquarters. Experience
                 our commitment to innovation and witness firsthand how we're shaping the future of farming.
               </p>
 
@@ -122,12 +119,19 @@ const ContactContent = () => {
                     <MapPin className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="font-bold text-gray-800 mb-1">Corporate Office</h3>
+
                       <p className="text-gray-600 text-sm leading-relaxed">
-                        57 - Chandra Park ST. No. 6, Plot ST behind Bigbazar,<br />
-                        Gulab Vatika, Rajkot, Gujarat 360004
+                        24, Business Park, Sector 18,<br />
+                        Rohini, New Delhi, Delhi 110085
                       </p>
-                      <button 
-                        onClick={() => window.open('https://maps.google.com/?q=57+Chandra+Park+Rajkot+360004', '_blank')}
+
+                      <button
+                        onClick={() =>
+                          window.open(
+                            "https://maps.google.com/?q=Rohini+New+Delhi+India",
+                            "_blank"
+                          )
+                        }
                         className="mt-2 text-green-600 text-sm font-medium flex items-center gap-1 hover:text-green-700"
                       >
                         <Navigation className="w-3 h-3" />
@@ -137,27 +141,7 @@ const ContactContent = () => {
                   </div>
                 </div>
 
-                {/* Factory Address */}
-                <div className="bg-linear-to-r from-amber-50 to-orange-50 rounded-xl p-5 border border-amber-100">
-                  <div className="flex items-start gap-3">
-                    <Building className="w-5 h-5 text-amber-600 flex-shrink-0 mt-1" />
-                    <div>
-                      <h3 className="font-bold text-gray-800 mb-1">Factory Address</h3>
-                      <p className="text-gray-600 text-sm leading-relaxed">
-                        Plot No - G-1092 Road No. 1C Kishan Gate No. 3<br />
-                        Kalavad Road Lodhika, GIDC Metoda,<br />
-                        Rajkot, Gujarat 360021
-                      </p>
-                      <button 
-                        onClick={() => window.open('https://maps.google.com/?q=GIDC+Metoda+Rajkot+360021', '_blank')}
-                        className="mt-2 text-amber-600 text-sm font-medium flex items-center gap-1 hover:text-amber-700"
-                      >
-                        <Navigation className="w-3 h-3" />
-                        Get Directions
-                      </button>
-                    </div>
-                  </div>
-                </div>
+
               </div>
             </div>
 
@@ -170,7 +154,7 @@ const ContactContent = () => {
 
               <div className="space-y-4">
                 {/* CIN */}
-                <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                {/* <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                   <div className="flex items-center gap-3">
                     <Award className="w-5 h-5 text-green-600" />
                     <div>
@@ -184,7 +168,7 @@ const ContactContent = () => {
                   >
                     {copied === 'cin' ? <CheckCircle className="w-5 h-5 text-green-600" /> : <Copy className="w-5 h-5" />}
                   </button>
-                </div>
+                </div> */}
 
                 {/* Toll Free */}
                 <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
@@ -192,11 +176,11 @@ const ContactContent = () => {
                     <Phone className="w-5 h-5 text-green-600" />
                     <div>
                       <p className="text-xs text-gray-500">Toll Free</p>
-                      <p className="font-medium text-gray-800">1800-258-1980</p>
+                      <p className="font-medium text-gray-800">98766543210</p>
                     </div>
                   </div>
                   <button
-                    onClick={() => handleCopy('1800-258-1980', 'toll')}
+                    onClick={() => handleCopy('98766543210', 'toll')}
                     className="text-gray-400 hover:text-green-600 transition-colors"
                   >
                     {copied === 'toll' ? <CheckCircle className="w-5 h-5 text-green-600" /> : <Copy className="w-5 h-5" />}
@@ -226,11 +210,11 @@ const ContactContent = () => {
                     <Users className="w-5 h-5 text-green-600" />
                     <div>
                       <p className="text-xs text-gray-500">Mobile</p>
-                      <p className="font-medium text-gray-800">+91 9111022270</p>
+                      <p className="font-medium text-gray-800">+91 9876543210</p>
                     </div>
                   </div>
                   <button
-                    onClick={() => handleCopy('+919111022270', 'mobile')}
+                    onClick={() => handleCopy('+91 9876543210', 'mobile')}
                     className="text-gray-400 hover:text-green-600 transition-colors"
                   >
                     {copied === 'mobile' ? <CheckCircle className="w-5 h-5 text-green-600" /> : <Copy className="w-5 h-5" />}
@@ -259,7 +243,7 @@ const ContactContent = () => {
               Let's Connect
             </h2>
             <p className="text-gray-600 mb-6">
-              Have a question? Need guidance? We're here to help. Use the form below to send us a message, 
+              Have a question? Need guidance? We're here to help. Use the form below to send us a message,
               and one of our knowledgeable team members will get back to you promptly.
             </p>
 
@@ -353,59 +337,12 @@ const ContactContent = () => {
           </div>
         </div>
 
-        {/* Map Section */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-            <MapPin className="w-6 h-6 text-green-600 mr-2" />
-            Find Us in Rajkot
-          </h2>
-          <p className="text-gray-600 mb-6">
-            Our operations are centered in Rajkot, Gujarat. Visit our corporate office or manufacturing facility.
-          </p>
-          
-          <div className="relative w-full h-[450px] rounded-xl overflow-hidden border border-gray-200">
-            <iframe
-              src={mapUrl}
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="SURYAENTERPRISES Location - Rajkot"
-              className="absolute inset-0"
-            ></iframe>
-            
-            {/* Map Overlay with Location Info */}
-            <div className="absolute bottom-4 left-4 right-4 md:left-auto md:right-4 md:w-72 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg p-4 border border-gray-200">
-              <div className="flex items-start gap-2">
-                <MapPin className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <div>
-                  <h3 className="font-bold text-gray-800">SURYAENTERPRISES Greens Limited</h3>
-                  <p className="text-sm text-gray-600 mt-1">
-                    Corporate Office: 57 - Chandra Park, Rajkot<br />
-                    Factory: GIDC Metoda, Rajkot
-                  </p>
-                  <button 
-                    onClick={() => window.open('https://maps.google.com/?q=Rajkot+Gujarat', '_blank')}
-                    className="mt-2 text-green-600 text-sm font-medium flex items-center gap-1 hover:text-green-700"
-                  >
-                    <Navigation className="w-3 h-3" />
-                    Open in Google Maps
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Additional Contact Options */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
           <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 text-center hover:shadow-lg transition">
             <Phone className="w-8 h-8 text-green-600 mx-auto mb-3" />
             <h3 className="font-semibold text-gray-800">Call Us</h3>
-            <p className="text-sm text-gray-500 mt-1">1800-258-1980 (Toll Free)</p>
-            <p className="text-sm text-gray-500">+91 9111022270</p>
+            <p className="text-sm text-gray-500">+91 9876543210</p>
           </div>
           <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 text-center hover:shadow-lg transition">
             <Mail className="w-8 h-8 text-green-600 mx-auto mb-3" />
