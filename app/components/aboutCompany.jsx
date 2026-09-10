@@ -40,9 +40,7 @@ const AboutContent = () => {
             <h1 className="text-[clamp(2.75rem,6vw,5.5rem)] font-bold mb-4 leading-[0.95] tracking-tight">
               SURYA<span className="text-amber-300">ENTERPRISES</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-100 mb-4 max-w-2xl leading-relaxed">
-              Greens Limited
-            </p>
+
           </div>
         </div>
       </div>
@@ -76,11 +74,11 @@ const AboutContent = () => {
             {/* Company Description */}
             <div className="space-y-6 text-gray-600 text-lg leading-relaxed mb-12">
               <p className="text-xl text-gray-700 font-medium border-l-4 border-green-500 pl-6 italic">
-                "Headquartered in Gujarat, India, we are a renowned Agro Chemical company committed to revolutionizing agriculture."
+                "Headquartered in Delhi, India, we are a renowned Agro Chemical company committed to revolutionizing agriculture."
               </p>
               
               <p>
-                <span className="font-semibold text-green-700 text-xl">SURYAENTERPRISES Greens Limited</span> stands at the 
+                <span className="font-semibold text-green-700 text-xl">SURYAENTERPRISES </span> stands at the 
                 forefront of agricultural innovation, delivering precision-engineered solutions that empower farmers 
                 across the nation. Our comprehensive range of products and unwavering commitment to quality have 
                 established us as a trusted partner in India's agricultural growth story.

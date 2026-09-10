@@ -191,7 +191,7 @@ const ManagementContent = () => {
             <HeartHandshake className="w-16 h-16 mx-auto mb-6 text-amber-300" />
             <h3 className="text-3xl md:text-4xl font-bold mb-4">Join Our Journey</h3>
             <p className="text-xl text-white/90 leading-relaxed">
-              The leadership team at SURYAENTERPRISES Greens Limited is united by a shared vision of agricultural progress 
+              The leadership team at SURYAENTERPRISES  Limited is united by a shared vision of agricultural progress 
               and sustainable growth. Together, we work tirelessly to bring innovative solutions to farmers, empower 
               communities, and shape the future of farming.
             </p>

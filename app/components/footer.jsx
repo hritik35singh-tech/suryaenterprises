@@ -70,7 +70,7 @@ const Footer = () => {
             </Link>
             
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
-              Discover the Difference with SURYAENTERPRISES Greens Limited. We're redefining agrochemical excellence 
+              Discover the Difference with SURYAENTERPRISES  Limited. We're redefining agrochemical excellence 
               with quality, innovation, and sustainable practices as your trusted partner in cultivating success.
             </p>
             
@@ -184,7 +184,7 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-500">
-              © {currentYear} SURYAENTERPRISES Greens Limited. All rights reserved.
+              © {currentYear} SURYAENTERPRISES  Limited. All rights reserved.
             </p>
             <div className="flex gap-6 text-xs text-gray-500">
               <Link href="/privacy" className="hover:text-green-400 transition-colors">

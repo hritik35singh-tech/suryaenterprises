@@ -6,7 +6,7 @@ import ProductGallery from "../components/productGallery";
 export const metadata: Metadata = {
     title: "Fungicides | Surya Enterprises",
     description:
-        "Explore fungicide solutions and responsible crop disease management from Surya Enterprises Greens Limited.",
+        "Explore fungicide solutions and responsible crop disease management from Surya Enterprises  Limited.",
 };
 
 const features = [
@@ -118,7 +118,7 @@ export default function FungicidesPage() {
                     </nav>
 
                     <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-green-100">
-                        Surya Enterprises Greens Limited
+                        Surya Enterprises  Limited
                     </p>
 
                     <h1
@@ -183,7 +183,7 @@ export default function FungicidesPage() {
 
                         <p className="text-base leading-8 text-slate-600 md:text-lg">
                             <strong className="font-semibold text-green-700">
-                                SURYAENTERPRISES Greens Limited
+                                SURYAENTERPRISES  Limited
                             </strong>{" "}
                             supports farmers with agricultural solutions for their crop
                             protection needs. Our fungicide category focuses on managing

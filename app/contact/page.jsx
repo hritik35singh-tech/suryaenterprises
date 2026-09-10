@@ -68,9 +68,7 @@ const ContactContent = () => {
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-gray-100 mb-4 font-light max-w-2xl">
-              Greens Limited
-            </p>
+
 
             <div className="w-24 h-1 bg-amber-400 rounded-full mt-8"></div>
           </div>

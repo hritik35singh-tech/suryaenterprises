@@ -6,7 +6,7 @@ import ProductGallery from "../components/productGallery";
 export const metadata: Metadata = {
     title: "PGR and Others | Surya Enterprises",
     description:
-        "Explore plant growth regulators and other agricultural solutions from Surya Enterprises Greens Limited.",
+        "Explore plant growth regulators and other agricultural solutions from Surya Enterprises  Limited.",
 };
 
 const features = [
@@ -118,7 +118,7 @@ export default function PgrAndOthersPage() {
                     </nav>
 
                     <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-green-100">
-                        Surya Enterprises Greens Limited
+                        Surya Enterprises  Limited
                     </p>
 
                     <h1
@@ -183,7 +183,7 @@ export default function PgrAndOthersPage() {
 
                         <p className="text-base leading-8 text-slate-600 md:text-lg">
                             <strong className="font-semibold text-green-700">
-                                SURYAENTERPRISES Greens Limited
+                                SURYAENTERPRISES  Limited
                             </strong>{" "}
                             supports farmers with agricultural solutions for their crop
                             management needs. Our PGR and Others category brings together

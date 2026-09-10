@@ -67,7 +67,7 @@ export default function ProductsPage() {
           </nav>
 
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-green-200">
-            Surya Enterprises Greens Limited
+                      Surya Enterprises  Limited
           </p>
           <h1 className="max-w-3xl text-5xl font-extrabold tracking-tight sm:text-6xl md:text-8xl">
             Grow with the right <span className="text-yellow-300">support.</span>
