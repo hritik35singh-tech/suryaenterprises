@@ -1,6 +1,7 @@
 // components/Footer.jsx
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   Leaf, 
   Mail, 
@@ -60,17 +61,21 @@ const Footer = () => {
           
           {/* Company Info - 4 columns */}
           <div className="lg:col-span-4 space-y-4">
-            <Link href="/" className="inline-flex items-center gap-2 group">
-              <div className="bg-linear-to-r from-green-500 to-emerald-500 p-2 rounded-lg">
-                <Leaf className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-2xl font-bold bg-linear-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-                SURYAENTERPRISES
+            <Link href="/" className="inline-flex items-center gap-3 group" aria-label="Surya Enterprises home">
+              <Image
+                src="/assets/images/logo.jpeg"
+                alt="Surya Enterprises"
+                width={220}
+                height={64}
+                className="h-14 w-auto object-contain"
+              />
+              <span className="text-xl font-bold tracking-tight text-green-400">
+                SURYA<span className="text-amber-300">ENTERPRISES</span>
               </span>
             </Link>
             
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
-              Discover the Difference with SURYAENTERPRISES  Limited. We're redefining agrochemical excellence 
+              Discover the Difference with SURYAENTERPRISES  Limited. We&apos;re redefining agrochemical excellence 
               with quality, innovation, and sustainable practices as your trusted partner in cultivating success.
             </p>
             

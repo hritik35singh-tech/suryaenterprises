@@ -7,7 +7,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'SURYAENTERPRISES Agro - Agricultural Solutions',
+  title: 'SURYAENTERPRISES',
   description: 'Leading provider of agricultural solutions in India',
 };
 

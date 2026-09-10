@@ -3,6 +3,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { ChevronDown, ShoppingCart } from 'lucide-react';
 
@@ -48,17 +49,11 @@ const Navbar = () => {
       name: 'Products', 
       href: '#',
       dropdown: [
-        { 
-          name: 'Our Products', 
-          href: '/products',
-          subdropdown: [
-            { name: 'Insecticides', href: '/products/insecticides' },
-            { name: 'Herbicides', href: '/products/herbicides' },
-            { name: 'Fungicides', href: '/products/fungicides' },
-            { name: 'PGR and Others', href: '/products/pgr-and-others' },
-            
-          ]
-        },
+        { name: 'All Products', href: '/products' },
+        { name: 'Insecticides', href: '/products/insecticides' },
+        { name: 'Herbicides', href: '/products/herbicides' },
+        { name: 'Fungicides', href: '/products/fungicides' },
+        { name: 'PGR and Others', href: '/products/pgr-and-others' },
         { name: 'Institutional', href: '/products/institutional' }
       ]
     },
@@ -82,8 +77,18 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="shrink-0">
-            <Link href="/" className="text-2xl font-bold text-emerald-700">
-              SURYA<span className="text-amber-600">ENTERPRISES</span>
+            <Link href="/" className="inline-flex items-center gap-3" aria-label="Surya Enterprises home">
+              <Image
+                src="/assets/images/logo.jpeg"
+                alt="Surya Enterprises"
+                width={180}
+                height={52}
+                priority
+                className="h-11 w-auto object-contain"
+              />
+              <span className="hidden text-lg font-bold tracking-tight text-emerald-700 lg:inline">
+                SURYA<span className="text-amber-600">ENTERPRISES</span>
+              </span>
             </Link>
           </div>
 
