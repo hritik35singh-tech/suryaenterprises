@@ -25,6 +25,14 @@ export const images = [
 
 export const getProductPrice = (index) => 349 + index * 73;
 
+const categoryRanges = {
+    Featured: [0, 7],
+    Insecticide: [0, 11],
+    Herbicide: [12, 24],
+    Fungicide: [25, 37],
+    "PGR and Others": [38, 49],
+};
+
 export default function ProductGallery({ category }) {
   const [cart, setCart] = useState(() => {
     if (typeof window === "undefined") return {};
@@ -32,6 +40,11 @@ export default function ProductGallery({ category }) {
     const savedCart = window.localStorage.getItem("surya-cart");
     return savedCart ? JSON.parse(savedCart) : {};
   });
+    const [start, end] = categoryRanges[category] || categoryRanges.Featured;
+    const categoryImages = images.slice(start, end + 1).map((image, index) => ({
+        ...image,
+        productIndex: start + index,
+    }));
 
   const itemCount = Object.values(cart).reduce((total, quantity) => total + quantity, 0);
   const subtotal = Object.entries(cart).reduce(
@@ -186,7 +199,7 @@ export default function ProductGallery({ category }) {
       )}
 
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {images.map((image, index) => (
+              {categoryImages.map((image, index) => (
           <article
             key={image.src}
             className="group relative flex min-h-[390px] flex-col overflow-hidden border border-slate-100 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
@@ -208,23 +221,23 @@ export default function ProductGallery({ category }) {
                 {category} product {String(index + 1).padStart(2, "0")} - crop care solution
               </h3>
               <p className="mt-auto pt-5 text-2xl font-bold text-green-700">
-                ₹ {getProductPrice(index).toLocaleString("en-IN")}.00
+                        ₹ {getProductPrice(image.productIndex).toLocaleString("en-IN")}.00
               </p>
-              {cart[index] ? (
+                    {cart[image.productIndex] ? (
                 <div className="mt-4 flex items-center justify-between border border-green-200 bg-green-50 p-2">
                   <button
                     type="button"
-                    onClick={() => updateQuantity(index, -1)}
-                    aria-label={`Remove one ${category} product ${index + 1}`}
+                    onClick={() => updateQuantity(image.productIndex, -1)}
+                    aria-label={`Remove one ${category} product ${image.productIndex + 1}`}
                     className="flex h-9 w-9 items-center justify-center text-green-800 transition hover:bg-white"
                   >
                     <Minus className="h-4 w-4" aria-hidden="true" />
                   </button>
-                  <span className="font-bold text-green-900">{cart[index]}</span>
+                            <span className="font-bold text-green-900">{cart[image.productIndex]}</span>
                   <button
                     type="button"
-                    onClick={() => updateQuantity(index, 1)}
-                    aria-label={`Add one ${category} product ${index + 1}`}
+                    onClick={() => updateQuantity(image.productIndex, 1)}
+                    aria-label={`Add one ${category} product ${image.productIndex + 1}`}
                     className="flex h-9 w-9 items-center justify-center text-green-800 transition hover:bg-white"
                   >
                     <Plus className="h-4 w-4" aria-hidden="true" />
@@ -233,7 +246,7 @@ export default function ProductGallery({ category }) {
               ) : (
                 <button
                   type="button"
-                  onClick={() => updateQuantity(index, 1)}
+                  onClick={() => updateQuantity(image.productIndex, 1)}
                   className="mt-4 inline-flex w-full items-center justify-center gap-2 bg-green-700 px-4 py-3 text-sm font-bold text-white transition hover:bg-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-700"
                 >
                   <ShoppingCart className="h-4 w-4" aria-hidden="true" />
