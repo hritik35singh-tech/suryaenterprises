@@ -1,16 +1,38 @@
 // components/Navbar.jsx
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ShoppingCart } from 'lucide-react';
+
+const getStoredCartCount = () => {
+  if (typeof window === 'undefined') return 0;
+
+  try {
+    const savedCart = window.localStorage.getItem('surya-cart');
+    const cart = savedCart ? JSON.parse(savedCart) : {};
+    return Object.values(cart).reduce((total, quantity) => total + quantity, 0);
+  } catch {
+    return 0;
+  }
+};
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const [cartCount, setCartCount] = useState(getStoredCartCount);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const updateCartCount = () => {
+      setCartCount(getStoredCartCount());
+    };
+
+    window.addEventListener('surya-cart-updated', updateCartCount);
+    return () => window.removeEventListener('surya-cart-updated', updateCartCount);
+  }, []);
 
   const navigation = [
     { name: 'Home', href: '/' },
@@ -104,7 +126,13 @@ const Navbar = () => {
                         {dropItem.subdropdown ? (
                           <div className="relative group">
                             <div className="px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 flex items-center justify-between">
-                              <span>{dropItem.name}</span>
+                              <Link
+                                href={dropItem.href}
+                                className="flex-1"
+                                onClick={() => setOpenDropdown(null)}
+                              >
+                                {dropItem.name}
+                              </Link>
                               <ChevronDown className="h-3 w-3 -rotate-90" />
                             </div>
                             
@@ -141,6 +169,13 @@ const Navbar = () => {
 
           {/* Desktop Search Bar and CTA */}
           <div className="hidden md:flex md:items-center md:space-x-4">
+            <Link
+              href="/cart"
+              className="inline-flex items-center gap-2 border-2 border-green-700 px-5 py-2.5 font-semibold text-green-700 transition hover:bg-green-700 hover:text-white"
+            >
+              <ShoppingCart className="h-5 w-5" aria-hidden="true" />
+              Cart <span className="text-sm">({cartCount} Items)</span>
+            </Link>
             {/* Search Bar */}
             {/* <form onSubmit={handleSearch} className="relative">
               <input
@@ -166,6 +201,14 @@ const Navbar = () => {
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-2">
+            <Link
+              href="/cart"
+              aria-label={`Cart with ${cartCount} items`}
+              className="inline-flex items-center gap-1 text-green-700"
+            >
+              <ShoppingCart className="h-5 w-5" aria-hidden="true" />
+              <span className="text-xs font-semibold">{cartCount}</span>
+            </Link>
             {/* Mobile Search Toggle */}
             {/* <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

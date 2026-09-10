@@ -99,7 +99,7 @@ const InstitutionalProducts = () => {
       <div className="relative h-75 md:h-87.5 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/assets/images/institutional-banner.jpg"
+            src="/assets/images/Frame-162665.png"
             alt="Institutional Products"
             fill
             className="object-cover"
